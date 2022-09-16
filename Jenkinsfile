@@ -17,9 +17,14 @@ pipeline{
             sh 'echo master slave test'
           }
         }
+        stage('sub-job 2 - roger'){
+          steps{
+            sh 'echo master slave test'
+          }
+        }
       }
     }
-     stage('parallel-job 1'){
+     stage('parallel-job 2'){
       parallel{
         stage('sub-job1 - Roger'){
           agent {
@@ -43,7 +48,7 @@ pipeline{
         }
       }
     }
-    stage('parallel-job 2'){
+    stage('parallel-job 3'){
       parallel{
         stage('sub-job1 - Constance'){
           steps{
